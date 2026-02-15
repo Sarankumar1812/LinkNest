@@ -64,3 +64,17 @@ create policy "lnk_bookmark_delete_own"
   for delete
   to authenticated
   using (auth.uid() = lnk_bt_user_id);
+
+do $$
+begin
+  if not exists (
+    select 1
+    from pg_publication_tables
+    where pubname = 'supabase_realtime'
+      and schemaname = 'public'
+      and tablename = 'lnk_bookmark_table'
+  ) then
+    alter publication supabase_realtime add table public.lnk_bookmark_table;
+  end if;
+end
+$$;

@@ -12,5 +12,10 @@ export default async function Home() {
     return <LoginPanel />;
   }
 
-  return <BookmarkDashboard userId={user.id} userEmail={user.email ?? ""} />;
+  const userName =
+    typeof user.user_metadata?.full_name === "string"
+      ? user.user_metadata.full_name
+      : null;
+
+  return <BookmarkDashboard userId={user.id} userEmail={user.email ?? ""} userName={userName} />;
 }

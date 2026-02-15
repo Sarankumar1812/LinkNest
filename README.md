@@ -4,8 +4,8 @@ Smart bookmark manager built with Next.js App Router, Supabase (Auth + Postgres 
 
 ## Live links
 
-- Live URL: `ADD_VERCEL_URL_HERE`
-- GitHub Repo: `ADD_GITHUB_REPO_URL_HERE`
+- Live URL: `https://link-nest-alpha.vercel.app`
+- GitHub Repo: `https://github.com/Sarankumar1812/LinkNest`
 
 ## Features
 
